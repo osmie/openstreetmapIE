@@ -39,7 +39,7 @@ To manually update nominatim follows these steps (takes about 65 minutes):
 8. update the import date
 
    ```
-   # DBDATE=$(sqlite3 /home/roles/taginfo/src/data/taginfo-db.db "select strftime('%Y-%m-%dT%H:%M:%SZ',data_until) from source where id = 'db'")
+   # DBDATE=$(sqlite3 /home/roles/taginfo/app/data/taginfo-db.db "select strftime('%Y-%m-%dT%H:%M:%SZ',data_until) from source where id = 'db'")
    # echo "delete from import_status; insert into import_status (lastimportdate) values ('$DBDATE')"  | psql nominatim
    ```
  
