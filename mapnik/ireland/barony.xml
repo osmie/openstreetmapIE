@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE Map [
+<!ENTITY % entities SYSTEM "inc/entities.xml.inc">
+%entities;
+]>
+<Map bgcolor="transparent" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
+
+  &fontset-settings;
+
+<Style name="boundary">
+
+    <Rule>
+      &maxscale_zoom7;
+      &minscale_zoom10;
+      <Filter>[boundary]='barony'</Filter>
+      <LineSymbolizer stroke="gold" stroke-width="2" />
+    </Rule>
+    <Rule>
+      &maxscale_zoom11;
+      <Filter>[boundary]='barony'</Filter>
+      <LineSymbolizer stroke="gold" stroke-width="4" />
+    </Rule>
+
+</Style>
+
+<Style name="boundarylabels">
+    <Rule>
+      &maxscale_zoom9;
+      &minscale_zoom11;
+      <Filter>[boundary]='barony'</Filter>
+      <TextSymbolizer placement="interior" largest-bbox-only="true" halo-radius="1" fontset-name="bold-fonts" size="8" fill="darkgoldenrod" wrap-width="14">[name]</TextSymbolizer>
+    </Rule>
+    <Rule>
+      &maxscale_zoom12;
+      <Filter>[boundary]='barony'</Filter>
+      <TextSymbolizer placement="interior" largest-bbox-only="true" halo-radius="3" fontset-name="bold-fonts" size="12" fill="darkgoldenrod" wrap-width="14">[name]</TextSymbolizer>
+    </Rule>
+</Style>
+
+
+<Layer name="admin" status="on" srs="&osm2pgsql_projection;">
+    <StyleName>boundary</StyleName>
+    <StyleName>boundarylabels</StyleName>
+    <Datasource>
+      <Parameter name="table">
+      (select way,boundary,admin_level,&name; as name
+       from &prefix;_polygon
+       where boundary='barony'
+       ) as boundary</Parameter>
+      &datasource-settings;
+    </Datasource>
+</Layer>
+
+</Map>
