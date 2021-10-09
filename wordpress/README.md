@@ -10,7 +10,7 @@ The current approach is as follows:
 
 ### Access reviews
 
-Access should be reviewed once every 6 months to ensure priviledges match current needs.
+Access should be reviewed once every 6 months to ensure privileges match current needs.
 
 ## Backups
 
