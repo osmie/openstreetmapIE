@@ -11,20 +11,20 @@
 
  - Install the ssh extension
 
-  ```bash
-  az extension add --name ssh
-  ```
+   ```bash
+   az extension add --name ssh
+   ```
 
  - Access hosts using the following command:
 
-  ```bash
-  az ssh vm -g <resource group> -n <host>
-  ```
+   ```bash
+   az ssh vm -g <resource group> -n <host>
+   ```
 
-  Example:
-  ```bash
-  az ssh vm -g www -n www-prod-01
-  ```
+   Example:
+   ```bash
+   az ssh vm -g www -n www-prod-01
+   ```
 
 
 # Troubleshooting
