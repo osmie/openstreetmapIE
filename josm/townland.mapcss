@@ -1,0 +1,59 @@
+meta {
+   title: "Irish Boundaries";
+   version: "0.8";
+   description: "MapCSS to highlight Irish townland, electoral district, civil parish and barony boundaries";
+   author: "IrlJidel";
+}
+
+/* admin 10 areas: eg closed ways or multipolygon relations */ 
+area[boundary=administrative][admin_level=10]:closed
+{
+   fill-color: red;
+   fill-opacity: 0.2;
+   font-size: 12;
+   text-color: purple;
+   text: name;
+   text-position: center;
+   z-index: 6;
+}
+
+relation[boundary=administrative][admin_level=9]:closed
+{
+   text: name;
+   text-position: center;
+   text-color: darkgreen;
+   font-size: 13;
+   fill-color: green;
+   fill-opacity: 0.6;
+   z-index: 5;
+}
+
+relation[boundary=civil_parish]:closed
+{
+   fill-color: lightblue;
+   fill-opacity: 0.4;
+   z-index: 4;
+}
+
+relation[boundary=administrative][admin_level=9]:closed
+{
+   fill-color: lightblue;
+   fill-opacity: 0.4;
+   z-index: 4;
+}
+
+/* Townland boundary ways */
+relation[boundary=administrative][admin_level=10] > way::townland
+{ width: 3; color: black; z-index: 6; dashes: 8,8; }
+
+/* ED boundaries wider under townland ways */
+relation[boundary=administrative][admin_level=9] > way::eds
+{ width: 5; color: darkgreen; z-index: 5; }
+
+/* Parish boundaries wider under townland ways */
+relation[boundary=civil_parish] > way::parish
+{ width: 7; color: lightblue; z-index: 4; }
+
+/* Barony boundaries wider again */
+relation[boundary=barony] > way::barony
+{ width: 13; color: gold; z-index: 2; }

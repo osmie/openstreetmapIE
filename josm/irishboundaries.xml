@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<presets xmlns="http://josm.openstreetmap.de/tagging-preset-1.0"
+ author="IrlJidel"
+ version="8"
+ shortdescription="Irish boundaries"
+ description="Presets to tag Irish boundaries">
+    <group name = "Irish boundaries" icon = "presets/misc/boundaries.png" >
+      <group name = "Administrative" icon = "presets/misc/boundaries.png" >
+        <item name="Traditional County" icon="presets/misc/boundaries.png" type="relation,multipolygon">
+            <label text="Edit County" />
+            <space />
+            <text key="name" text="Name" />
+            <optional>
+                <text key="name:ga" text="Irish Name" />
+                <text key="alt_name" text="Alternative Name" />
+                <text key="alt_name:ga" text="Alternative Irish Name" />
+            </optional>
+            <key key="type" value="boundary" />
+            <key key="boundary" value="administrative" />
+            <key key="admin_level" value="6" />
+            <key key="place" value="county" />
+        </item>
+        <item name="County/City Council (LAU-1)" icon="presets/misc/boundaries.png" type="relation,multipolygon">
+            <label text="Edit Council" />
+            <space />
+            <text key="name" text="Name" />
+            <optional>
+                <text key="name:ga" text="Irish Name" />
+                <text key="alt_name" text="Alternative Name" />
+                <text key="alt_name:ga" text="Alternative Irish Name" />
+            </optional>
+            <key key="type" value="boundary" />
+            <key key="boundary" value="administrative" />
+            <key key="admin_level" value="7" />
+        </item>
+        <item name="Municipal Districts" icon="presets/misc/boundaries.png" type="relation,multipolygon">
+            <label text="Edit Municipal District" />
+            <space />
+            <text key="name" text="Name" />
+            <optional>
+                <text key="name:ga" text="Irish Name" />
+            </optional>
+            <key key="type" value="boundary" />
+            <key key="boundary" value="administrative" />
+            <key key="admin_level" value="8" />
+        </item>
+        <item name="Electoral Division (LAU-2)" icon="presets/misc/boundaries.png" type="relation,multipolygon">
+            <label text="Edit ED" />
+            <space />
+            <text key="name" text="Name" default=" ED"/>
+            <optional>
+                <text key="alt_name" text="Alternative Name (Electoral Division)" default=" Electoral Division" />
+                <text key="alt_name_1" text="Alternative Name (DED)" default=" DED"/>
+                <text key="alt_name_2" text="Alternative Name (Ward)" />
+            </optional>
+            <key key="type" value="boundary" />
+            <key key="boundary" value="administrative" />
+            <key key="admin_level" value="9" />
+        </item>
+        <item name="Townland" icon="presets/misc/boundaries.png" type="relation,multipolygon">
+            <label text="Edit Townland" />
+            <space />
+            <text key="name" text="Name" />
+            <optional>
+                <text key="name:ga" text="Irish Name" />
+                <text key="source:name:ga" text="Irish Name Source" />
+                <text key="alt_name" text="Alternative Name" />
+                <text key="alt_name:ga" text="Alternative Irish Name" />
+            </optional>
+            <key key="type" value="boundary" />
+            <key key="boundary" value="administrative" />
+            <key key="admin_level" value="10" />
+            <key key="place" value="locality" />
+            <key key="locality" value="townland" />
+        </item>
+      </group>
+      <group name = "Political" icon = "presets/misc/boundaries.png" >
+        <item name="Local Election Area" icon="presets/misc/boundaries.png" type="relation,multipolygon">
+            <label text="Edit LEA" />
+            <space />
+            <text key="name" text="Name" />
+            <key key="type" value="boundary" />
+            <key key="boundary" value="political" />
+            <key key="political_division" value="local_const" />
+        </item>
+        <item name="Dail Constituency" icon="presets/misc/boundaries.png" type="relation,multipolygon">
+            <label text="Edit Dail Constituency" />
+            <space />
+            <text key="name" text="Name" />
+            <key key="type" value="boundary" />
+            <key key="boundary" value="political" />
+            <key key="political_division" value="parl_const" />
+        </item>
+        <item name="Euro Constituency" icon="presets/misc/boundaries.png" type="relation,multipolygon">
+            <label text="Edit Euro Constituency" />
+            <space />
+            <text key="name" text="Name" />
+            <key key="type" value="boundary" />
+            <key key="boundary" value="political" />
+            <key key="political_division" value="euro_const" />
+        </item>
+      </group>
+      <group name = "Historic" icon = "presets/misc/boundaries.png" >
+        <item name="Sub Townland" icon="presets/place/locality.svg" type="node">
+            <label text="Edit Sub Townland" />
+            <space />
+            <text key="name" text="Name" />
+            <optional>
+                <text key="name:ga" text="Irish Name" />
+                <text key="alt_name" text="Alternative Name" />
+                <text key="alt_name:ga" text="Alternative Irish Name" />
+            </optional>
+            <key key="place" value="locality" />
+            <key key="locality" value="subtownland" />
+        </item>
+        <item name="Civil Parish" icon="presets/misc/boundaries.png" type="relation,multipolygon">
+            <label text="Edit Civil Parish" />
+            <space />
+            <text key="name" text="Name" default=" Civil Parish" />
+            <optional>
+                <text key="name:ga" text="Irish Name" />
+                <text key="source:name:ga" text="Irish Name Source" />
+                <text key="alt_name" text="Alternative Name" />
+                <text key="alt_name:ga" text="Alternative Irish Name" />
+            </optional>
+            <key key="type" value="boundary" />
+            <key key="boundary" value="civil_parish" />
+        </item>
+        <item name="Barony" icon="presets/misc/boundaries.png" type="relation,multipolygon">
+            <label text="Edit Barony" />
+            <space />
+            <text key="name" text="Name" default="Barony of " />
+            <optional>
+                <text key="name:ga" text="Irish Name" />
+                <text key="source:name:ga" text="Irish Name Source" />
+                <text key="alt_name" text="Alternative Name" />
+                <text key="alt_name:ga" text="Alternative Irish Name" />
+            </optional>
+            <key key="type" value="boundary" />
+            <key key="boundary" value="barony" />
+        </item>
+      </group>
+   </group>
+</presets>
